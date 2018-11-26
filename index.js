@@ -18,7 +18,7 @@ function gymMember(startDate,endDate){
             let cekBudi = false
             var holder = 'tanggal '
                 if((i + tanggal) % 5 === 0){
-                    holder +=  (i+tanggal) + ': ' +'tempat fitness tutup'
+                    holder +=  (i+tanggal) + ': ' +'tempat fitness tutup   '
                 }
                 else {
                     holder += (i+startDate) +': '
@@ -34,7 +34,7 @@ function gymMember(startDate,endDate){
                 }
 
         
-            result += holder
+            result += holder.slice(0,holder.length-2)
             result += '\n'
     }
         
