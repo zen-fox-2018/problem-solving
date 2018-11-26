@@ -1,15 +1,13 @@
 /*
-STORE 'output' with blank string
-STORE 'counterLibur' with 0
 STORE 'counterTono' with 0
 STORE 'counterAnton' with 0
 STORE 'counterBudi' with 0
 
 FOR i = 7 until i < 32
+  STORE 'output' with blank string
   IF i equals to 7 THEN
     SET 'output' with "Tono, Anton, Budi"
   ELSE
-    ADD 'counterLibur' by 1
     ADD 'counterTono' by 1
     ADD 'counterAnton' by 1
     ADD 'counterBudi' by 1
@@ -29,7 +27,6 @@ FOR i = 7 until i < 32
 
     IF 'counterLibur' mod 5 equals to 0 THEN
         SET 'output' with "Tempat Fitness Tutup"
-        RESET 'counterLibur'
     ELSE
       STORE 'splitOutput' with the result of SPLIT 'output' by ' '
       DELETE the last value of array 'splitOutput' by using POP
@@ -44,7 +41,6 @@ END LOOP
 
 var tono = 0;
 var budi = 0;
-var libur = 0;
 var anton = 0;
 
 for (var i = 7; i < 32; i++) {
@@ -52,7 +48,7 @@ for (var i = 7; i < 32; i++) {
   if (i === 7) {
     output = 'Tono, Budi, Anton';
   } else {
-    tono++; budi++; anton++; libur++;
+    tono++; budi++; anton++;
     // console.log('======',output);
     if (tono === 2) {
       output += 'Tono ';
@@ -68,7 +64,6 @@ for (var i = 7; i < 32; i++) {
     }
     if (i % 5 === 0) {
       output = 'Tempat Fitness Tutup';
-      libur = 0;
     } else {
       var splitOutput = output.split(' ');
       splitOutput.pop();
