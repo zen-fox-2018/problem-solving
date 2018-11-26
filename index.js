@@ -14,7 +14,14 @@ for (let i = 7; i <= days; i++) {
         if (day % 5 === 0) {
             name.push("Budi")
         }
-        let result = `Tanggal ${i}: ${name.join(', ')}`
-        console.log(result);
+        if (name.length === 1) {
+            console.log(`Tanggal ${i}: ${name[0]}`)
+        } else if (name.length === 2) {
+            console.log(`Tanggal ${i}: ${name.join(' & ')}`);
+        } else if (name.length >= 3){
+            let koma = name.splice(0, name.length-1)
+            // console.log(koma);
+            console.log(`Tanggal ${i}: ${koma.join(', ')} & ${name[name.length-1]}`);
+        }
     }
 }
