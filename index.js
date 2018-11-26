@@ -8,17 +8,17 @@ WHILE `i` less than equals `akhir`
   IF `i` modulo 5 equals 0
     SET `result` with result + "Tempat Fitness Tutup"
   ELSE
-    IF `i` - `awal` modulo 2 equals 0 AND (`i` - `awal` modulo 4 equals 0 OR `i` - `awal` modulo 5 equals 0)
+    IF (`i` - `awal`) modulo 2 equals 0 AND ((`i` - `awal`) modulo 4 equals 0 OR (`i` - `awal`) modulo 5 equals 0)
       SET `result` with result  + "Tono, "
-    ELSE IF `i` - `awal` modulo 2 equals 0
+    ELSE IF (`i` - `awal`) modulo 2 equals 0
       SET `result` with result  + "Tono"
     END IF
-    IF `i` - `awal` modulo 4 equals 0 AND `i` - `awal` modulo 5 equals 0
+    IF (`i` - `awal`) modulo 4 equals 0 AND (`i` - `awal`) modulo 5 equals 0
       SET `result` with result  + "Anton, "
-    ELSE IF `i` - `awal` modulo 4 equals 0
+    ELSE IF (`i` - `awal`) modulo 4 equals 0
       SET `result` with result  + "Anton"
     END IF
-    IF `i` - `awal` modulo 5 equals 0
+    IF (`i` - `awal`) modulo 5 equals 0
       SET `result` with result  + "Budi"
     END IF
   END IF
