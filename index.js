@@ -1,5 +1,6 @@
+//RELEASE 1 =======================================
 let counter = 0
-let a = 'aa'
+
 for (let i = 7; i <= 31; i++) {
     let string = `Tanggal ${i}: `
     let array = []
@@ -20,5 +21,5 @@ for (let i = 7; i <= 31; i++) {
 
     string += array.join(`, `)
     console.log(string);
-    
 }
+
