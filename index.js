@@ -2,23 +2,23 @@
 
 STORE "result" with the value of empty Array
 
-FOR LOOP i from 7 to 31
-IF i EQUALS TO 7 THEN 
-"result" push "Tono, Anton, Budi"
-ELSE IF i MOD 5 EQUALS TO 0 THEN 
-"result" push "Tempat fitness tutup"
-ELSE 
-IF i-7 MOD 2 EQUALS TO 0 THEN 
-"result" push "Tono"
-IF i-7 MOD 4 EQUALS TO 0 THEN 
-"result" push "Anton"
-IF i-7 MOD 5 EQUALS TO 0 THEN
-"result" push "Budi"
-END IF 
-DISPLAY "Tanggal i: "result" "
-"result" = []
-END IF
-EXIT LOOP
+    FOR LOOP i from 7 to 31
+        IF i EQUALS TO 7 THEN 
+            "result" push "Tono, Anton, Budi"
+        ELSE IF i MOD 5 EQUALS TO 0 THEN 
+            "result" push "Tempat fitness tutup"
+        ELSE 
+            IF i-7 MOD 2 EQUALS TO 0 THEN 
+                "result" push "Tono"
+            IF i-7 MOD 4 EQUALS TO 0 THEN 
+                "result" push "Anton"
+            IF i-7 MOD 5 EQUALS TO 0 THEN
+                "result" push "Budi"
+            END IF 
+        DISPLAY "Tanggal i: "result" "
+        "result" = []
+        END IF
+    EXIT LOOP
 
 */
 
