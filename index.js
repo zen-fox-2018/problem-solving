@@ -13,14 +13,16 @@ FOR 'i' EQUALS to 'dateOpenStart' TO 'i' less than 32
     IF i modulus 5 equals to 0 
         DO 'result' equals to 'result' + 'Tempat Fitness Tutup'
     ELSE
-        IF i modulus 'tonoPeriode' equals to 0
-            DO 'result' equals to 'result' + 'Tono'
+        STORE 'gymArray' with empty array
+        IF i-dateOpenStart modulus 'tonoPeriode' equals to 0
+            DO push 'Tono' to 'gymArray'
         END IF
-        IF i modulus 'antonPeriode' equals to 0
-            DO 'result' equals to 'result' + 'Anton'
+        IF i-dateOpenStart modulus 'antonPeriode' equals to 0
+            DO push 'Anton' to 'gymArray'
         END IF
-        IF i modulus 'budiPeriode' equals to 0
-            DO 'result' equals to 'result' + 'Budi'
+        IF i-dateOpenStart modulus 'budiPeriode' equals to 0
+            DO push 'Budi' to 'gymArray'
+        'result' equals to 'result' + 'gymArray'.join(', ')
         END IF
     END IF
     IF i not equals to 31
@@ -35,31 +37,35 @@ var tonoPeriode = 2
 var antonPeriode = 4
 var budiPeriode = 5
 
+var dateOpenStart = 7
 
 
 var result =''
 
 //do loop from tanggal 7 sampe 31
-for (var i = 7; i < 32; i++){
+for (var i = dateOpenStart; i < 32; i++){
     result += 'Tanggal '+i+ ': '
     if (i % 5 === 0) {
         result += 'Tempat Fitness Tutup'
     }
     else {
-        if ((i - 7 ) % tonoPeriode === 0) {
-            result += ' Tono'            
+        var gymArray = []
+        if ((i - dateOpenStart ) % tonoPeriode === 0) {
+            gymArray.push('Tono')
         }
-        if ((i - 7 ) % antonPeriode === 0) {
-            result += ' Anton'
+        if ((i - dateOpenStart ) % antonPeriode === 0) {
+            gymArray.push('Anton')
         }
-        if ((i - 7 ) % budiPeriode === 0) {
-            result += ' Budi'
+        if ((i - dateOpenStart ) % budiPeriode === 0) {
+            gymArray.push('Budi')
         }
+        result += gymArray.join(', ')
     }
+   
     if (i !== 31){
         result += '\n'
-    }    
-    
+    }
+        
 }
 
 console.log(result)
